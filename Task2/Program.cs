@@ -18,10 +18,10 @@ namespace Task2
             string noSpaces = sToLower.Replace(" ","");
             //Console.WriteLine(noSpaces);
             int l = noSpaces.Length;
-            string half1, half2;
-            half1 = noSpaces.Substring(0, l / 2);
+            //string half1, half2;
+            //half1 = noSpaces.Substring(0, l / 2);
             
-            if (l%2!=0)
+            /*if (l%2!=0)
             {
                 half2 =noSpaces.Substring(l/2+1);
             }
@@ -29,10 +29,10 @@ namespace Task2
             {
                 half2 = noSpaces.Substring(l / 2);
             }
-
+            */
             bool palindrom=true;
                        
-            for (int i = 0; i < l/2; i++)
+            /*for (int i = 0; i < l/2; i++)
             {              
                 if (half1[i]!=half2[l/2-1-i]) 
                 {
@@ -42,7 +42,20 @@ namespace Task2
                 }
                 Console.WriteLine("{0}={1}", half1[i],half2[l/2-1-i]);
             }
-            
+            */
+
+            for (int i = 0; i < l / 2; i++)
+            {
+                if (noSpaces[i] != noSpaces[l - 1 - i])
+                {
+                    palindrom = false;
+                    Console.Write("{0}!={1}", noSpaces[i], noSpaces[l  - 1 - i]);
+                    break;
+                }
+                Console.WriteLine("{0}={1}", noSpaces[i], noSpaces[l  - 1 - i]);
+            }
+
+
             if (palindrom)
             Console.WriteLine("\nПредложение - палиндром");
             else
